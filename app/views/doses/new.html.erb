@@ -1,0 +1,14 @@
+<h1>Add your ingredients for <%= @cocktail.name %></h1>
+
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.input :description %>
+  <%= f.association :ingredient, as: :select %>
+  <%= f.input :cocktail_id, as: :hidden, input_html: { value: @cocktail.id }%>
+  <%= f.submit %>
+<% end %>
+
+<p><%= link_to "BACK", cocktail_path(@cocktail) %>
+
+
+
+
